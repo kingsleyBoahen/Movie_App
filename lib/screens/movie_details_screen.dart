@@ -21,7 +21,7 @@ class MovieDetailsScreen extends StatelessWidget {
               decoration: BoxDecoration(
               color: Colors.grey,
                 image: DecorationImage(
-                  image: NetworkImage("https://www.omdbapi.com/src/poster.jpg"),
+                  image: NetworkImage("https://image.tmdb.org/t/p/w600_and_h900_bestv2/byKAndF6KQSDpGxp1mTr23jPbYp.jpg"),
                   fit: BoxFit.fill,
                 ),
               ),

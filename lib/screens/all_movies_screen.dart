@@ -2,12 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:movie_app/Network/all_movies_network.dart';
 import 'package:movie_app/screens/movie_details_screen.dart';
 
-class AllMoviesScreen extends StatelessWidget {
+class AllMoviesScreen extends StatefulWidget {
   const AllMoviesScreen({Key? key}) : super(key: key);
 
   @override
+  State<AllMoviesScreen> createState() => _AllMoviesScreenState();
+}
+
+class _AllMoviesScreenState extends State<AllMoviesScreen> {
+AllMoviesNetwork _allMoviesNetwork = AllMoviesNetwork();
+
+  @override
+  void initState() {
+    _allMoviesNetwork.getAllMovies();
+    super.initState();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE8E7E7),
@@ -30,22 +42,6 @@ class AllMoviesScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   AppBar allmoviesApp(BuildContext context) {
     return AppBar(title: Text(
